@@ -11,8 +11,14 @@
       </a>
       <div class="country-selector">
         <img src="../assets/images/NigeriaFlag.svg" alt="NG" />
-        <span>NG</span>
+        <span> NG</span>
         <img src="../assets/images/image (5).svg" alt="dropdown" />
+        <div class="dropdown-menu-lang">
+          <ul class="products-list">
+            <li><a href=""><img src="../assets/images/NigeriaFlag.svg" alt="NG" /> Ghana</a></li>
+            <li><a href=""><img src="../assets/images/NigeriaFlag.svg" alt="NG" /> Nigeria</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -55,7 +61,12 @@
 </template>
 
 <style scoped>
-/* left part */
+/* ─── Left Section ─── */
+.navbar-left {
+  display: flex;
+  gap: 20px;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -64,24 +75,58 @@
   border-radius: 26px;
 }
 
-.navbar-left {
-  display: flex;
-  gap: 20px;
-}
-
 .country-selector {
+  position: relative;
+  /* for its dropdown */
+  cursor: pointer;
+  /* indicates clickability */
   background-color: white;
   padding: 8px 26px;
   border-radius: 26px;
   color: #085012;
 }
 
-/* central part */
+/* country-selector dropdown */
+.country-selector:hover .dropdown-menu-lang {
+  display: block;
+}
 
+.dropdown-menu-lang {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown-menu-lang .products-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dropdown-menu-lang .products-list li {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 8px 26px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 26px;
+  margin: 4px 0;
+}
+
+
+/* ─── Center Section ─── */
 .navbar-center {
-  margin: 0px;
+  margin: 0;
   padding: 0 20px;
-
   list-style: none;
   background-color: white;
   border-radius: 26px;
@@ -99,83 +144,10 @@
   padding: 10px 16px;
 }
 
-.customers-dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.products-dropdown {
-  position: relative;
-}
-
+/* products-dropdown */
 .products-dropdown:hover .dropdown-menu-products {
   display: block;
 }
-
-
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-
-  z-index: 1000;
-  background-color: transparent;
-  border: none;
-}
-
-
-.dropdown-menu ul {
-  list-style: none;
-  border-radius: 26px;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-
-}
-
-
-
-.dropdown-menu ul li {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 8px 16px;
-  background-color: white;
-  border-radius: 26px;
-  margin: 4px 0;
-  border: 1px solid grey;
-}
-
-
-
-.customers-dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* right part */
-.navbar-right {
-  display: flex;
-  gap: 10px;
-
-}
-
-.customers-dropdown {
-  position: relative;
-  background-color: white;
-  padding: 8px 26px;
-  border-radius: 26px;
-}
-
-
-.cart-icon {
-  background-color: white;
-  padding: 8px 8px;
-  border-radius: 26px;
-}
-
 
 .dropdown-menu-products {
   display: none;
@@ -188,26 +160,77 @@
   border: none;
 }
 
-
-.dropdown-menu-products ul {
+.dropdown-menu-products .products-list {
   list-style: none;
-  border-radius: 26px;
   margin: 0;
   padding: 0;
+  border-radius: 26px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-
 }
 
-.dropdown-menu-products ul li {
+.dropdown-menu-products .products-list li {
   display: inline-block;
   white-space: nowrap;
   /* padding: 8px 16px; */
   background-color: white;
+  border: 1px solid grey;
   border-radius: 26px;
   margin: 4px 0;
+}
+
+
+/* ─── Right Section ─── */
+.navbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.customers-dropdown {
+  position: relative;
+  background-color: white;
+  padding: 8px 26px;
+  border-radius: 26px;
+}
+
+.customers-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dropdown-menu ul li {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 8px 16px;
+  background-color: white;
   border: 1px solid grey;
+  border-radius: 26px;
+  margin: 4px 0;
+}
+
+.cart-icon {
+  background-color: white;
+  padding: 8px;
+  border-radius: 26px;
 }
 </style>
