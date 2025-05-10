@@ -1,227 +1,135 @@
 <script setup>
-const currentYear = new Date().getFullYear()
+import starIcon from '@/assets/images/card1.png'
+import badgeIcon from '@/assets/images/card1.png'
+import logo from '@/assets/images/card1.png'
+import twitterIcon from '@/assets/images/card1.png'
+import facebookIcon from '@/assets/images/card1.png'
+import instagramIcon from '@/assets/images/card1.png'
+import linkedinIcon from '@/assets/images/card1.png'
 </script>
 
 <template>
-    <link rel="stylesheet" href="footer.css">
+    <footer class="bg-black text-white">
+        <!-- Subscription row -->
+        <div
+            class="max-w-[1248px] mx-auto px-4 lg:px-0 flex flex-col lg:flex-row items-center justify-between py-8 border-b border-gray-800">
+            <div class="flex items-center space-x-3 mb-6 lg:mb-0">
+                <img :src="starIcon" alt="Star" class="h-6 w-6" />
+                <h3 class="text-2xl font-bold">Cool stuff only</h3>
+                <span class="text-sm text-gray-400">Subscribe to our newsletter</span>
+            </div>
+            <form class="flex items-center w-full lg:w-auto">
+                <input type="email" placeholder="yourname@email.com"
+                    class="flex-grow bg-transparent placeholder-gray-500 border-b border-gray-700 focus:outline-none text-sm py-2 mr-4" />
+                <button type="submit" class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6 text-purple-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </button>
+            </form>
+        </div>
 
-    <footer class="bg-black text-white text-sm pt-10">
-        <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
-
-            <!-- Left Section -->
-            <div class="flex flex-col gap-6">
-                <img src="../assets/images/badge.svg" alt="Badge" class="w-20" />
-                <a href="mailto:yourname@email.com" class="text-gray-400 hover:text-white">yourname@email.com</a>
+        <!-- Links grid -->
+        <div
+            class="max-w-[1248px] mx-auto px-4 lg:px-0 grid grid-cols-2 lg:grid-cols-4 gap-8 py-8 border-b border-gray-800">
+            <div class="flex justify-center lg:justify-start">
+                <img :src="badgeIcon" alt="Badge" class="w-16 h-16" />
             </div>
 
-            <!-- Middle Sections -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 lg:mt-0">
-                <div>
-                    <h3 class="font-semibold uppercase text-gray-400 mb-3">Company</h3>
-                    <ul class="space-y-1">
-                        <li><a href="/">customers</a></li>
-                        <li><a href="/vendors">Vendors</a></li>
-                        <li><a href="/riders">Riders</a></li>
-                        <li><a href="/store" target="_blank" rel="noreferrer">Storefront</a></li>
-                        <li><a href="/company">About</a></li>
-                        <li><a href="https://chowdeck.bamboohr.com/careers" target="_blank" rel="noreferrer">Careers</a>
-                        </li>
-                        <li><a href="/#faqs">FAQs</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/terms">Terms of Use</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                    </ul>
-                </div>
+            <!-- Company links -->
+            <div>
+                <h4 class="text-gray-400 font-semibold mb-4 uppercase">Company</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Customers</a></li>
+                    <li><a href="#" class="hover:text-white">Vendors</a></li>
+                    <li><a href="#" class="hover:text-white">Riders</a></li>
+                    <li><a href="#" class="hover:text-white">Storefront</a></li>
+                    <li><a href="#" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">FAQs</a></li>
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Use</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
 
-                <div>
-                    <h3 class="font-semibold uppercase text-gray-400 mb-3">Cuisines near you</h3>
-                    <ul class="space-y-1">
-                        <li><a href="/store/cuisines/pasta-near-me">Pasta near me</a></li>
-                        <li><a href="/store/cuisines/rice-near-me">Rice near me</a></li>
-                        <li><a href="/store/cuisines/fast-food-near-me">Fast food near me</a></li>
-                        <li><a href="/store/cuisines/asian-food-in-lagos">Asian food in Lagos</a></li>
-                        <li><a href="/store/cuisines/african-food-in-lagos">African food in Lagos</a></li>
-                        <li><a href="/store/cuisines/breakfast-menu-in-lagos">Breakfast menu in Lagos</a></li>
-                        <li><a href="/store/cuisines/fitfam-stores-in-lagos">Fitfam stores in Lagos</a></li>
-                        <li><a href="/store/cuisines/american-food-in-lagos">American food in Lagos</a></li>
-                        <li><a href="/store/cuisines/pastries-in-lagos">Pastries in Lagos</a></li>
-                        <li><a href="/store/cuisines/salad-in-lagos">Salad in Lagos</a></li>
-                        <li><a href="/store/cuisines/fruits-in-lagos">Fruits in Lagos</a></li>
-                    </ul>
-                </div>
+            <!-- Cuisines near you -->
+            <div>
+                <h4 class="text-gray-400 font-semibold mb-4 uppercase">Cuisines Near You</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Pasta near me</a></li>
+                    <li><a href="#" class="hover:text-white">Rice near me</a></li>
+                    <li><a href="#" class="hover:text-white">Fast food near me</a></li>
+                    <li><a href="#" class="hover:text-white">Asian food in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">African food in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">Breakfast menu in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">Fiftam stores in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">American food in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">Pastries in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">Salad in Lagos</a></li>
+                    <li><a href="#" class="hover:text-white">Fruits in Lagos</a></li>
+                </ul>
+            </div>
 
-                <div>
-                    <h3 class="font-semibold uppercase text-gray-400 mb-3">Popular</h3>
-                    <ul class="space-y-1">
-                        <li><a href="/store">Food delivery</a></li>
-                        <li><a href="/store/surulere">Surulere</a></li>
-                        <li><a href="/store/ogudu">Ogudu</a></li>
-                        <li><a href="/store/lagos-mainland">Yaba</a></li>
-                        <li><a href="/store/ikeja">Ikeja</a></li>
-                        <li><a href="/store/lekki">Lekki</a></li>
-                        <li><a href="/store/ikeja/restaurants/king-glab-ikeja">King Glab</a></li>
-                        <li><a href="/store/lagos-mainland/restaurants/korede-spaghetti">Korede Spaghetti</a></li>
-                        <li><a href="/store/lagos-mainland/restaurants/iyan-aladuke">Iyan Aladuke</a></li>
-                        <li><a href="/store/ikeja/restaurants/food-fusion-lagos">Food Fusion</a></li>
-                        <li><a href="/store/ikeja/restaurants/belefull">Belefull</a></li>
-                    </ul>
-                </div>
+            <!-- Popular links -->
+            <div>
+                <h4 class="text-gray-400 font-semibold mb-4 uppercase">Popular</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Food delivery</a></li>
+                    <li><a href="#" class="hover:text-white">Surulere</a></li>
+                    <li><a href="#" class="hover:text-white">Ogudu</a></li>
+                    <li><a href="#" class="hover:text-white">Yaba</a></li>
+                    <li><a href="#" class="hover:text-white">Ikeja</a></li>
+                    <li><a href="#" class="hover:text-white">Lekki</a></li>
+                    <li><a href="#" class="hover:text-white">King Glab</a></li>
+                    <li><a href="#" class="hover:text-white">Korede Spaghetti</a></li>
+                    <li><a href="#" class="hover:text-white">Iyan Aladuke</a></li>
+                    <li><a href="#" class="hover:text-white">Food Fusion</a></li>
+                    <li><a href="#" class="hover:text-white">Belefull</a></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Social Links -->
-        <div class="container mx-auto px-4 mt-10 mb-6 flex flex-wrap gap-4 justify-center text-center text-white">
-            <a href="https://twitter.com/chowdeck" target="_blank" rel="noreferrer">✨ Twitter</a>
-            <a href="https://www.instagram.com/chowdeck/" target="_blank" rel="noreferrer">🌸 Instagram</a>
-            <a href="https://facebook.com/chowdeck" target="_blank" rel="noreferrer">🟣 Facebook</a>
-            <a href="https://www.linkedin.com/company/chowdeck/" target="_blank" rel="noreferrer">🟠 LinkedIn</a>
-        </div>
+        <!-- Bottom row -->
+        <div class="max-w-[1248px] mx-auto px-4 lg:px-0 flex flex-col lg:flex-row items-center justify-between py-8">
+            <!-- Logo -->
+            <div class="mb-6 lg:mb-0">
+                <img :src="logo" alt="Chowdeck" class="h-8" />
+            </div>
 
-        <!-- Copyright -->
-        <div class="text-center text-gray-500 pb-6">
-            <p>© All Rights Reserved. {{ currentYear }}, Chowdeck Logistics Inc.</p>
+            <!-- Social links grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-6 text-sm">
+                <!-- Twitter -->
+                <a href="#" class="flex items-center space-x-2 hover:text-white">
+                    <img :src="twitterIcon" alt="Twitter" class="h-5 w-5" />
+                    <span>Twitter</span>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="flex items-center space-x-2 hover:text-white">
+                    <img :src="instagramIcon" alt="Instagram" class="h-5 w-5" />
+                    <span>Instagram</span>
+                </a>
+                <!-- Facebook -->
+                <a href="#" class="flex items-center space-x-2 hover:text-white">
+                    <img :src="facebookIcon" alt="Facebook" class="h-5 w-5" />
+                    <span>Facebook</span>
+                </a>
+                <!-- LinkedIn -->
+                <a href="#" class="flex items-center space-x-2 hover:text-white">
+                    <img :src="linkedinIcon" alt="LinkedIn" class="h-5 w-5" />
+                    <span>LinkedIn</span>
+                </a>
+            </div>
         </div>
     </footer>
 </template>
 
 <style scoped>
-.navigation-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 40px 0 20px 0;
-    font-size: 14px;
-}
-
-.navigation-footer .sunscribe-email {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 5%;
-    margin-bottom: 30px;
-}
-
-.sunscribe-email input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    color: #fff;
-    padding: 8px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-.sunscribe-email button {
-    background-color: transparent;
-    color: #a68eff;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    transform: rotate(-45deg);
-    margin-top: -5px;
-}
-
-.footexr-flex {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 5%;
-    gap: 40px;
-}
-
-.footer-logos {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    min-width: 100px;
-}
-
-.company-section,
-.cuisine-section,
-.popular-section {
-    min-width: 160px;
-}
-
-.footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-list li {
-    margin-bottom: 10px;
-}
-
-.footer-list a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-list a:hover {
-    color: #fff;
-}
-
-h3 {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #aaa;
-    margin-bottom: 12px;
-}
-
-.social-links {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.social-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.social-links li {
-    margin-bottom: 10px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    color: #ccc;
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    color: #fff;
-}
-
-.social-links img {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-}
-
-footer>div:last-child {
-    text-align: center;
-    padding-top: 20px;
-    color: #666;
-    font-size: 13px;
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-    .footexr-flex {
-        flex-direction: column;
-    }
-
-    .sunscribe-email {
-        justify-content: center;
-        padding: 0 20px;
-    }
-
-    .social-links {
-        align-items: center;
-    }
+/* Hide default input underline on WebKit but keep the bottom border */
+input::-webkit-appearance {
+    -webkit-appearance: none;
 }
 </style>

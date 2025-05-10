@@ -61,6 +61,26 @@
 </template>
 
 <style scoped>
+.navbar {
+  /* span the full content area */
+  width: 100%;
+  max-width: 1140px;
+  /* or whatever your page max is */
+  margin: 0 auto;
+  /* center it */
+  padding: 0 20px;
+  /* small side padding */
+
+  /* FLEX LAYOUT */
+  display: flex;
+  align-items: center;
+  /* vertical align */
+  justify-content: space-between;
+  /* push left/right to edges */
+  flex-wrap: nowrap;
+  /* never wrap */
+}
+
 /* ─── Left Section ─── */
 .navbar-left {
   display: flex;

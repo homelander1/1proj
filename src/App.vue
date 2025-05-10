@@ -1,10 +1,17 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
 
-import PageHeader from './components/PageHeader.vue'
 
+import HeroSection from './components/HeroSection.vue'
 import CoolStuff from './components/CoolStuff.vue'
 import PageFooter from './components/PageFooter.vue'
+import helloAll from './components/helloAll.vue'
+import JoinNet from './components/JoinNet.vue'
+import CarouselSection from './components/CarouselSection.vue'
+import FeaturesList from './components/FeaturesList.vue'
+import RestaurantsMap from './components/RestaurantsMap.vue'
+import SomeStories from './components/SomeStories.vue'
+import FAQSection from './components/FAQSection.vue'
 </script>
 
 <template>
@@ -13,8 +20,16 @@ import PageFooter from './components/PageFooter.vue'
 
     <div class="wrapper">
 
-      <PageHeader />
 
+      <HeroSection />
+      <helloAll />
+
+      <JoinNet />
+      <CarouselSection />
+      <FeaturesList />
+      <RestaurantsMap />
+      <SomeStories />
+      <FAQSection />
 
 
       <CoolStuff />

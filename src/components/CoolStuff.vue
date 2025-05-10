@@ -3,46 +3,48 @@
 </script>
 
 <template>
-    <div class="promo-container">
-        <div class="promo-card">
-            <h2 class="title">Place your <br> order in seconds</h2>
+    <section class="max-w-[1248px] mx-auto flex flex-col lg:flex-row gap-6 px-4 lg:px-0">
+        <div class="promo-container">
+            <div class="promo-card">
+                <h2 class="title">Place your <br> order in seconds</h2>
 
-            <div class="promo-section">
-                <div class="left-block">
+                <div class="promo-section">
+                    <div class="left-block">
 
 
-                    <div class="buttons">
-                        <a href="#" class="store-button"> <img src="../assets/images/image (23).svg"
-                                alt="Google Play Logo"> Download on Google Play</a>
-                        <a href="#" class="store-button"><img src="../assets/images/balck apple.png" alt=""> Download on
-                            App
-                            Store</a>
+                        <div class="buttons">
+                            <a href="#" class="store-button"> <img src="../assets/images/image (23).svg"
+                                    alt="Google Play Logo"> Download on Google Play</a>
+                            <a href="#" class="store-button"><img src="../assets/images/balck apple.png" alt="">
+                                Download on
+                                App
+                                Store</a>
 
+                        </div>
+
+                        <div class="price-tag">
+                            <img src="../assets/images/Group 13255.svg" alt="Promo">
+                        </div>
+
+                        <div class="promo-code">CDNWEB</div>
+
+                        <p class="promo-text">
+                            Get <span class="yellow-text">₦300 off</span> your first order when you use this promo code!
+                        </p>
                     </div>
 
-                    <div class="price-tag">
-                        <img src="../assets/images/Group 13255.svg" alt="Promo">
+                    <div class="right-block">
+                        <img src="../assets/images/drink.svg" class="drink-image" alt="Drink">
                     </div>
-
-                    <div class="promo-code">CDNWEB</div>
-
-                    <p class="promo-text">
-                        Get <span class="yellow-text">₦300 off</span> your first order when you use this promo code!
-                    </p>
-                </div>
-
-                <div class="right-block">
-                    <img src="../assets/images/drink.svg" class="drink-image" alt="Drink">
                 </div>
             </div>
+
+
+            <div class="promo-card promo-photo">
+
+            </div>
         </div>
-
-
-        <div class="promo-card promo-photo">
-
-        </div>
-    </div>
-
+    </section>
 
     <div class="cool-stuff">
         <div class="subscription-motto">
@@ -57,6 +59,7 @@
         </div>
 
     </div>
+
 </template>
 
 
