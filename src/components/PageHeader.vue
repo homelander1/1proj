@@ -9,14 +9,18 @@
         <img src="../assets/images/image (3).svg" alt="logo" />
 
       </a>
-      <div class="country-selector">
+      <div class="country-selector flex items-center gap-2">
         <img src="../assets/images/NigeriaFlag.svg" alt="NG" />
         <span> NG</span>
         <img src="../assets/images/image (5).svg" alt="dropdown" />
         <div class="dropdown-menu-lang">
           <ul class="products-list">
-            <li><a href=""><img src="../assets/images/NigeriaFlag.svg" alt="NG" /> Ghana</a></li>
-            <li><a href=""><img src="../assets/images/NigeriaFlag.svg" alt="NG" /> Nigeria</a></li>
+            <li class="flex justify-end"><a href="" class=""><img class="inline-block"
+                  src="../assets/images/GhanaFlag.svg" alt="NG" />
+                Ghana</a></li>
+            <li><a href="" class="flex items-center gap-2 "><img class="inline-block"
+                  src="../assets/images/NigeriaFlag.svg" alt="NG" />
+                Nigeria</a></li>
           </ul>
         </div>
       </div>
@@ -24,7 +28,8 @@
 
     <ul class="navbar-center ">
       <li class="products-dropdown">
-        <a href="#">Products <img src="../assets/images/image (5).svg" alt="dropdown" /></a>
+        <a href="#" class="flex items-center gap-2">Products <img class="inline-block"
+            src="../assets/images/image (5).svg" alt="dropdown" /></a>
         <div class="dropdown-menu-products">
           <ul class="products-list">
             <li><a href="">Chowpass</a></li>
@@ -41,7 +46,7 @@
 
     <div class="navbar-right">
       <div class="customers-dropdown">
-        <a href="#">
+        <a href="#" class="flex items-center gap-2 ">
           Customers <img src="../assets/images/image (5).svg" alt="dropdown" />
         </a>
         <div class="dropdown-menu">
@@ -52,7 +57,7 @@
 
         </div>
       </div>
-      <a href="#" class="cart-icon">
+      <a href="#" class="cart-icon items-center flex">
         <img src="../assets/images/image (7).svg" alt="Cart" />
       </a>
     </div>
@@ -62,6 +67,7 @@
 
 <style scoped>
 .navbar {
+
   /* span the full content area */
   width: 100%;
   max-width: 1140px;
@@ -81,6 +87,13 @@
   /* never wrap */
 }
 
+.navbar,
+.navbar * {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+
 /* ─── Left Section ─── */
 .navbar-left {
   display: flex;
@@ -97,13 +110,15 @@
 
 .country-selector {
   position: relative;
+
   /* for its dropdown */
   cursor: pointer;
   /* indicates clickability */
   background-color: white;
   padding: 8px 26px;
   border-radius: 26px;
-  color: #085012;
+
+
 }
 
 /* country-selector dropdown */
@@ -112,6 +127,7 @@
 }
 
 .dropdown-menu-lang {
+
   display: none;
   position: absolute;
   top: 100%;
@@ -123,6 +139,7 @@
 }
 
 .dropdown-menu-lang .products-list {
+
   list-style: none;
   margin: 0;
   padding: 0;
@@ -140,6 +157,7 @@
   border: 1px solid grey;
   border-radius: 26px;
   margin: 4px 0;
+
 }
 
 
@@ -162,6 +180,7 @@
 .navbar-center li a {
   display: block;
   padding: 10px 16px;
+  color: black;
 }
 
 /* products-dropdown */
@@ -198,6 +217,7 @@
   border: 1px solid grey;
   border-radius: 26px;
   margin: 4px 0;
+
 }
 
 
@@ -212,6 +232,7 @@
   background-color: white;
   padding: 8px 26px;
   border-radius: 26px;
+  color: black;
 }
 
 .customers-dropdown:hover .dropdown-menu {
@@ -246,11 +267,12 @@
   border: 1px solid grey;
   border-radius: 26px;
   margin: 4px 0;
+
 }
 
 .cart-icon {
   background-color: white;
-  padding: 8px;
+  padding: 12px;
   border-radius: 26px;
 }
 </style>
