@@ -68,23 +68,17 @@
 <style scoped>
 .navbar {
 
-  /* span the full content area */
   width: 100%;
   max-width: 1140px;
-  /* or whatever your page max is */
-  margin: 0 auto;
-  /* center it */
-  padding: 0 20px;
-  /* small side padding */
 
-  /* FLEX LAYOUT */
+  margin: 0 auto;
+
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  /* vertical align */
   justify-content: space-between;
-  /* push left/right to edges */
   flex-wrap: nowrap;
-  /* never wrap */
+
 }
 
 .navbar,
@@ -111,9 +105,9 @@
 .country-selector {
   position: relative;
 
-  /* for its dropdown */
+
   cursor: pointer;
-  /* indicates clickability */
+
   background-color: white;
   padding: 8px 26px;
   border-radius: 26px;

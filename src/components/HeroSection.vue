@@ -4,11 +4,10 @@ import PageHeader from '@/components/PageHeader.vue'
 
 const phrases = [
     'Have you eaten?',
-    'Second Have you eaten?',
-    'Third Have you eaten?'
+    'Have you?',
+    'Still Hungry?'
 ]
 
-// msg is reactive so template updates when its value changes
 const msg = ref(phrases[0])
 
 let intervalId = null
@@ -18,7 +17,7 @@ onMounted(() => {
     intervalId = setInterval(() => {
         msg.value = phrases[i]
         i = (i + 1) % phrases.length
-    }, 2000) // change phrase every 2s
+    }, 2000)
 })
 
 onUnmounted(() => {
@@ -73,12 +72,9 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: center;
 
-    /* clip any image parts that stick out */
     overflow: hidden;
 
-    /* background layers */
     background-image:
-        /* url('../assets/images/bottom couds-3.svg'), */
         url('../assets/images/hebg.svg');
     background-position:
         center center,
@@ -99,7 +95,6 @@ onUnmounted(() => {
 }
 
 
-/* common for both clouds */
 .cloud1,
 .cloud2,
 .cloud3 {
@@ -125,36 +120,35 @@ onUnmounted(() => {
 
 
 .rl-ryder-1 {
-    /* 4s per loop, linear timing, infinite repeats */
+
     animation: ryder-rtl 12s linear infinite;
 }
 
 @keyframes ryder-rtl {
 
-    /* start off-screen to the right */
+
     0% {
         transform: translateX(1000px) rotate(0deg);
     }
 
-    /* end off-screen to the left */
+
     100% {
         transform: translateX(-3000px) rotate(0deg);
     }
 }
 
 .diagonalRyder {
-    /* 4s per loop, linear timing, infinite repeats */
+
     animation: diagonalRyderl 8s linear infinite;
 }
 
 @keyframes diagonalRyderl {
 
-    /* start off-screen to the right */
     0% {
         transform: translateX(300px) translateY(-150px) rotate(0deg);
     }
 
-    /* end off-screen to the left */
+
     100% {
         transform: translateX(-1900px) translateY(550px) rotate(0deg);
     }
@@ -162,17 +156,17 @@ onUnmounted(() => {
 
 
 
-/* push them above the top edge */
+
 .cloud1 {
     top: -60px;
-    /* adjust this to taste */
+
     left: 10%;
     animation: float-1 6s ease-in-out infinite;
 }
 
 .cloud2 {
     top: -80px;
-    /* adjust this to taste */
+
     right: 10%;
     animation: float-2 8s ease-in-out infinite;
 }
@@ -182,8 +176,8 @@ onUnmounted(() => {
     z-index: 10;
     top: 380px;
     right: -100px;
-    /* adjust this to taste */
-    /* right: 10%; */
+
+
     animation: float-3 4s ease-in-out infinite;
 }
 
