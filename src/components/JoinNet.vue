@@ -2,44 +2,28 @@
     <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Heading -->
-            <h2 class="text-4xl font-bold text-center text-gray-300 mb-12 flex justify-center items-center">
-                <span>Join our growing network</span>
-                <svg class="w-6 h-6 ml-2 text-gray-300 animate-bounce" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+            <h2 class="font-bold text-center text-gray-300 flex justify-center items-center mb-12">
+                <span>Join our growing network&nbsp;</span>
+                <img src="../assets/images/arrowDown.png" alt="" class="w-14 h-14" />
             </h2>
 
             <!-- Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div v-for="item in cards" :key="item.title"
-                    class="flex flex-col border-2 border-black rounded-2xl overflow-hidden">
-                    <!-- Card Body -->
+                    class="flex flex-col border-3 border-black rounded-2xl overflow-hidden">
+                    <!-- Top half: icon + text -->
                     <div class="p-6 flex-1 flex flex-col">
-                        <!-- Icon -->
-                        <div class="text-3xl mb-4">
-                            {{ item.icon }}
-                        </div>
-                        <!-- Title -->
-                        <h3 class="text-xl font-bold">
-                            {{ item.title }}
-                        </h3>
-                        <!-- Description -->
-                        <p class="text-gray-700 mt-2 flex-1">
-                            {{ item.description }}
-                        </p>
-                        <!-- See More Link -->
-                        <a :href="item.link"
-                            class="mt-4 inline-flex items-center text-sm font-semibold uppercase hover:text-yellow-500">
-                            See More
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M12.293 5.293a1 1 0 011.414 1.414L10.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4z" />
-                            </svg>
+                        <img :src="item.icon" :alt="item.title + ' icon'" class="w-6 h-6 mb-3 object-contain" />
+                        <h3 class="">{{ item.title }}</h3>
+                        <p class="text-gray-700 ">{{ item.description }}</p>
+                        <a :href="item.link" class="mt-4 inline-flex items-center text-sm font-semibold uppercase">
+                            See More&nbsp;
+                            <img src="../assets/images/rightArrow.png" alt="">
                         </a>
                     </div>
-                    <!-- Card Image -->
-                    <div class="h-40 overflow-hidden">
+
+                    <!-- Bottom half: image -->
+                    <div class="h-50 overflow-hidden">
                         <img :src="item.image" :alt="item.title" class="w-full h-full object-cover" />
                     </div>
                 </div>
@@ -51,35 +35,78 @@
 <script setup>
 import { ref } from 'vue'
 
-// import each asset so the bundler knows to include it
+// explicitly import so bundler includes them
 import img1 from '@/assets/images/card1.png'
 import img2 from '@/assets/images/card2.png'
 import img3 from '@/assets/images/card3.png'
 
+import icon1 from '@/assets/images/start.png'
+import icon2 from '@/assets/images/deliver.png'
+import icon3 from '@/assets/images/behind.png'
+
 const cards = ref([
     {
-        icon: '🌟',
+        icon: icon1,
         title: 'Start selling',
-        description: 'Are you a restaurant owner…',
+        description:
+            'Are you a restaurant owner looking to grow your business? Reach new customers when you join our network.',
         link: '/vendors',
-        image: img1,        // ← now a proper URL
+        image: img1,
     },
     {
-        icon: '🛵',
+        icon: icon2,
         title: 'Deliver happiness',
-        description: 'Join our elite league…',
+        description:
+            'Join our elite league of delivery riders delivering happiness to customers and earn to achieve your dreams while at it.',
         link: '/riders',
         image: img2,
     },
     {
-        icon: '✨',
+        icon: icon3,
         title: 'Behind the scenes',
-        description: 'If you are passionate…',
+        description:
+            'If you are passionate about helping us achieve our goal to deliver meals seamlessly, come join the team.',
         link: '/careers',
         image: img3,
     },
 ])
 </script>
 
+<style scoped>
+h2 {
+    font-size: 66px;
+    letter-spacing: -2px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
 
-<style scoped></style>
+h3 {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    margin: 12px 0;
+
+}
+
+p {
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+a {
+    color: black;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>

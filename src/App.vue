@@ -24,7 +24,9 @@ import FAQSection from './components/FAQSection.vue'
       <helloAll />
 
       <JoinNet />
+
       <CarouselSection />
+
       <FeaturesList />
       <RestaurantsMap />
       <SomeStories />
