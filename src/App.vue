@@ -12,6 +12,8 @@ import FeaturesList from './components/FeaturesList.vue'
 import RestaurantsMap from './components/RestaurantsMap.vue'
 import SomeStories from './components/SomeStories.vue'
 import FAQSection from './components/FAQSection.vue'
+
+import HasYouCovered from './components/HasYouCovered.vue'
 </script>
 
 <template>
@@ -26,6 +28,7 @@ import FAQSection from './components/FAQSection.vue'
       <JoinNet />
 
       <CarouselSection />
+      <HasYouCovered />
 
       <FeaturesList />
       <RestaurantsMap />
