@@ -1,5 +1,5 @@
 <template>
-    <section class="py-16 bg-[#0C513F] overflow-hidden">
+    <section class="py-16 bg-[#0C513F] overflow-hidden relative h-284">
 
         <div class="overflow-hidden  ">
             <ul class="flex gap-4 animate-scroll-badges">
@@ -25,6 +25,7 @@
                 </template>
             </div>
         </div>
+        <img class="paper w-[100%]" src="../assets/images/Paper-Texture.svg" alt="">
     </section>
 </template>
 
@@ -53,11 +54,37 @@ const badges = [
     { icon: bg3, label: 'Live updates on orders' },
     { icon: bg4, label: 'Highly rated riders' },
     { icon: bg5, label: '24/7 support for customers and vendors' },
+    { icon: bg1, label: 'Quick and easy onboarding' },
+    { icon: bg2, label: 'Quality meal choices' },
+    { icon: bg3, label: 'Live updates on orders' },
+    { icon: bg4, label: 'Highly rated riders' },
+    { icon: bg5, label: '24/7 support for customers and vendors' },
+    { icon: bg1, label: 'Quick and easy onboarding' },
+    { icon: bg2, label: 'Quality meal choices' },
+    { icon: bg3, label: 'Live updates on orders' },
+    { icon: bg4, label: 'Highly rated riders' },
+    { icon: bg5, label: '24/7 support for customers and vendors' },
 
 ]
 
 
 const phoneImages = [
+    { src: img0, mt: '0px' },
+    { src: img1, mt: '20px' },
+    { src: img2, mt: '0px' },
+    { src: img3, mt: '20px' },
+    { src: img0, mt: '0px' },
+    { src: img1, mt: '20px' },
+    { src: img2, mt: '0px' },
+    { src: img3, mt: '20px' },
+    { src: img0, mt: '0px' },
+    { src: img1, mt: '20px' },
+    { src: img2, mt: '0px' },
+    { src: img3, mt: '20px' },
+    { src: img0, mt: '0px' },
+    { src: img1, mt: '20px' },
+    { src: img2, mt: '0px' },
+    { src: img3, mt: '20px' },
     { src: img0, mt: '0px' },
     { src: img1, mt: '20px' },
     { src: img2, mt: '0px' },
@@ -100,10 +127,14 @@ const phoneImages = [
 }
 
 .animate-scroll-badges {
-    animation: scroll-badges 15s linear infinite;
+    animation: scroll-badges 30s linear infinite;
 }
 
 .animate-scroll-phones {
-    animation: scroll-phones 20s linear infinite;
+    animation: scroll-phones 40s linear infinite;
+}
+
+.paper {
+    margin-top: 60px;
 }
 </style>

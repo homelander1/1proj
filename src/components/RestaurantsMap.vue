@@ -1,30 +1,52 @@
 <template>
-    <div class="max-w-5xl mx-auto bg-white border border-black rounded-lg overflow-hidden flex h-[600px]">
-        <!-- Left: static map image -->
-        <div class="w-2/3">
-            <img src="" alt="Map" class="w-full h-full object-cover" />
-        </div>
+    <div class="restaurants">
 
-        <!-- Right: scrollable list -->
-        <div class="w-1/3 flex flex-col">
-            <!-- Header -->
-            <div class="bg-blue-300 px-4 py-3 border-b border-gray-200">
-                <h3 class="text-lg font-semibold text-black">Restaurants</h3>
+        <div class="max-w-[1250px] mx-auto bg-white border-3 border-black rounded-3xl overflow-hidden flex h-[800px]">
+            <!-- Left: static map image -->
+            <div class="w-2/3 border-r-3 border-black-800 relative">
+                <img src="../assets/images/LiveLocationBG.svg" alt="Map" class="w-full h-full object-cover" />
+                <div class="absolute top-35 left-35">
+                    <a href=""><img src="../assets/images/Ogudu_e1552ab64b.png.png" alt=""></a>
+                </div>
+                <div class="absolute top-75 left-25">
+                    <a href=""><img src="../assets/images/Yaba_91670ee055.png.png" alt=""></a>
+                </div>
+                <div class="absolute top-45 left-135">
+                    <a href=""><img src="../assets/images/Surulere_77593861c4.png.png" alt=""></a>
+                </div>
+                <div class="absolute top-120 left-95">
+                    <a href=""><img src="../assets/images/Ikeja_2dd3121b42.png.png" alt=""></a>
+                </div>
+                <div class="absolute top-135 left-135">
+                    <a href=""><img src="../assets/images/Lekki_657afbc50f.png.png" alt=""></a>
+                </div>
+                <img class="absolute top-[680px] left-[150px]" src="../assets/images/clickany.png" alt="">
+
             </div>
-            <!-- Scrollable list -->
-            <div class="flex-1 overflow-y-auto bg-white">
-                <ul class="p-2">
-                    <li v-for="item in items" :key="item.name" class="mb-2">
-                        <a :href="item.link"
-                            class="flex justify-between items-center bg-white rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-100 transition-colors">
-                            <span class="text-gray-800">{{ item.name }}</span>
-                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 3h18v18H3V3z" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+
+            <!-- Right: scrollable list -->
+            <div class="w-[540px] flex flex-col">
+                <!-- Header -->
+                <div class="bg-blue-300 px-4 py-3 border-b-4 border-black flex items-center">
+                    <img class="inline-block " src="../assets/images/circle_before.png" alt="">
+                    <h3 class="text-lg font-semibold text-black ml-2 m-0 px-2 py-1.5">Restaurants</h3>
+                </div>
+
+                <!-- Scrollable list -->
+                <div class="flex-1 overflow-y-auto bg-white">
+                    <ul class="p-3">
+                        <li v-for="item in items" :key="item.name" class="mb-2 ">
+                            <a :href="item.link"
+                                class="flex justify-between items-center bg-white rounded-lg border border-gray-200 px-3 py-3 rest-button">
+                                <span class="text-gray-800 ">{{ item.name }}</span>
+                                <div class="bg-gray-100 rounded-full p-2 flex items-center justify-center">
+                                    <img src="../assets/images/cart.png" alt="">
+                                </div>
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -52,24 +74,42 @@ const items = ref([
 ])
 </script>
 
-<style>
-/* custom scrollbar for WebKit browsers */
-::-webkit-scrollbar {
-    width: 8px;
+<style scoped>
+.rest-button:hover {
+    background-color: #f4f4f4;
 }
 
-::-webkit-scrollbar-track {
+/* Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 24px;
+    /* Wide scrollbar track */
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    /* Track color: very light gray */
+    border-radius: 12px;
 }
 
-/* Firefox scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    /* Thumb color: white */
+    border-radius: 12px;
+    /* Fully rounded ends */
+    border: 6px solid #f4f4f4;
+    /* Creates 'padding' around thumb */
+    min-height: 56px;
+    /* Nice tall thumb */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    /* Very subtle shadow (optional) */
+}
+
+/* For Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    /* Makes the thumb narrower */
+    scrollbar-color: #fff #f4f4f4;
+    /* Thumb color (white) and track color */
 }
 </style>

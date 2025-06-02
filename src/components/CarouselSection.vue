@@ -1,45 +1,50 @@
 <template>
-    <div class="rounded-2xl overflow-hidden w-310 mx-auto relative">
-        <!-- Slides Container -->
-        <div class="w-full h-196">
-            <div v-for="(slide, idx) in slides" :key="idx" v-show="currentIndex === idx"
-                class="w-full h-full flex flex-col items-center justify-start text-black"
-                :style="{ backgroundColor: slide.backgroundColor }">
-                <h2 class="text-4xl font-extrabold text-center mb-6">
-                    {{ slide.title }}
-                </h2>
-                <img :src="slide.image" alt="" class="h-140 w-270 mb-4" />
+    <div class="relative h-[900px]">
+        <div class="w-[100%] h-[780px] absolute top-[120px] z-10 back"></div>
+        <div class="carousel_block relative  z-20">
+            <div class="rounded-2xl overflow-hidden w-310 mx-auto relative">
+                <!-- Slides Container -->
+                <div class="w-full h-196">
+                    <div v-for="(slide, idx) in slides" :key="idx" v-show="currentIndex === idx"
+                        class="w-full h-full flex flex-col items-center justify-start text-black"
+                        :style="{ backgroundColor: slide.backgroundColor }">
+                        <h2 class="text-4xl font-extrabold text-center mb-6">
+                            {{ slide.title }}
+                        </h2>
+                        <img :src="slide.image" alt="" class="h-140 w-270 mb-4" />
+                    </div>
+                </div>
+
+                <!-- Pagination at bottom-left -->
+                <div class="absolute bottom-5 left-5 flex items-center space-x-2">
+                    <button v-for="(_, idx) in slides" :key="idx" @click="goTo(idx)"
+                        class="m-1 relative rounded-full flex items-center justify-center overflow-visible"
+                        :style="buttonStyle(idx)">
+                        <img v-if="getButtonIcon(idx)" :src="getButtonIcon(idx)" alt="" class="w-8 h-8" />
+                        <span v-else class="text-lg font-medium leading-none">
+                            {{ slides[idx].label }}
+                        </span>
+                        <!-- Progress ring -->
+                        <svg v-if="currentIndex === idx" class="absolute inset-0" viewBox="0 0 56 56">
+                            <circle cx="28" cy="28" r="27" fill="none" stroke-width="3" :stroke="currentScheme[idx]"
+                                :stroke-dasharray="circumference" :stroke-dashoffset="dashOffset"
+                                style="transform: rotate(-90deg); transform-origin: 28px 28px;" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Arrows at bottom-right -->
+                <div class="absolute bottom-5 right-5 flex items-center space-x-2">
+                    <button @click="prevSlide" :style="arrowStyle()"
+                        class="w-10 h-10 rounded-full flex items-center justify-center">
+                        <img :src="getRightArrow()" alt="Prev" class="w-6 h-6" />
+                    </button>
+                    <button @click="nextSlide" :style="arrowStyle()"
+                        class="m-2 w-10 h-10 rounded-full flex items-center justify-center">
+                        <img :src="getLeftArrow()" alt="Next" class="w-6 h-6" />
+                    </button>
+                </div>
             </div>
-        </div>
-
-        <!-- Pagination at bottom-left -->
-        <div class="absolute bottom-5 left-5 flex items-center space-x-2">
-            <button v-for="(_, idx) in slides" :key="idx" @click="goTo(idx)"
-                class="m-1 relative rounded-full flex items-center justify-center overflow-visible"
-                :style="buttonStyle(idx)">
-                <img v-if="getButtonIcon(idx)" :src="getButtonIcon(idx)" alt="" class="w-8 h-8" />
-                <span v-else class="text-lg font-medium leading-none">
-                    {{ slides[idx].label }}
-                </span>
-                <!-- Progress ring -->
-                <svg v-if="currentIndex === idx" class="absolute inset-0" viewBox="0 0 56 56">
-                    <circle cx="28" cy="28" r="27" fill="none" stroke-width="3" :stroke="currentScheme[idx]"
-                        :stroke-dasharray="circumference" :stroke-dashoffset="dashOffset"
-                        style="transform: rotate(-90deg); transform-origin: 28px 28px;" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Arrows at bottom-right -->
-        <div class="absolute bottom-5 right-5 flex items-center space-x-2">
-            <button @click="prevSlide" :style="arrowStyle()"
-                class="w-10 h-10 rounded-full flex items-center justify-center">
-                <img :src="getRightArrow()" alt="Prev" class="w-6 h-6" />
-            </button>
-            <button @click="nextSlide" :style="arrowStyle()"
-                class="m-2 w-10 h-10 rounded-full flex items-center justify-center">
-                <img :src="getLeftArrow()" alt="Next" class="w-6 h-6" />
-            </button>
         </div>
     </div>
 </template>
@@ -186,5 +191,9 @@ h2 {
     letter-spacing: -3px;
     margin-top: 50px;
     margin-bottom: 30px;
+}
+
+.back {
+    background-color: #0C513F;
 }
 </style>

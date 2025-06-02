@@ -1,5 +1,5 @@
 <script setup>
-import starIcon from '@/assets/images/card1.png'
+// import starIcon from '@/assets/images/card1.png'
 import badgeIcon from '@/assets/images/card1.png'
 import logo from '@/assets/images/card1.png'
 import twitterIcon from '@/assets/images/card1.png'
@@ -9,27 +9,9 @@ import linkedinIcon from '@/assets/images/card1.png'
 </script>
 
 <template>
-    <footer class="bg-black text-white">
-        <!-- Subscription row -->
-        <div
-            class="max-w-[1248px] mx-auto px-4 lg:px-0 flex flex-col lg:flex-row items-center justify-between py-8 border-b border-gray-800">
-            <div class="flex items-center space-x-3 mb-6 lg:mb-0">
-                <img :src="starIcon" alt="Star" class="h-6 w-6" />
-                <h3 class="text-2xl font-bold">Cool stuff only</h3>
-                <span class="text-sm text-gray-400">Subscribe to our newsletter</span>
-            </div>
-            <form class="flex items-center w-full lg:w-auto">
-                <input type="email" placeholder="yourname@email.com"
-                    class="flex-grow bg-transparent placeholder-gray-500 border-b border-gray-700 focus:outline-none text-sm py-2 mr-4" />
-                <button type="submit" class="p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="w-6 h-6 text-purple-500">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </button>
-            </form>
-        </div>
+    <footer class="bg-black text-white relative">
+
+
 
         <!-- Links grid -->
         <div

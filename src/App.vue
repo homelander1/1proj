@@ -4,7 +4,7 @@
 
 import HeroSection from './components/HeroSection.vue'
 import CoolStuff from './components/CoolStuff.vue'
-import PageFooter from './components/PageFooter.vue'
+// import PageFooter from './components/PageFooter.vue'
 import helloAll from './components/helloAll.vue'
 import JoinNet from './components/JoinNet.vue'
 import CarouselSection from './components/CarouselSection.vue'
@@ -37,7 +37,7 @@ import HasYouCovered from './components/HasYouCovered.vue'
 
 
       <CoolStuff />
-      <PageFooter />
+      <!-- <PageFooter /> -->
 
 
       <!-- <nav> -->

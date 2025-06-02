@@ -1,58 +1,63 @@
 <template>
-    <section class="max-w-5xl mx-auto bg-white border border-black rounded-2xl overflow-hidden">
-        <div class="flex">
-            <!-- Left Column: FAQs -->
-            <div class="w-1/3 border-r border-gray-200 flex flex-col h-[600px]">
-                <!-- Header -->
-                <div class="px-6 py-8">
-                    <h3 class="text-3xl font-bold text-green-800">FAQs.</h3>
-                </div>
-                <!-- Questions List -->
-                <div class="flex-1 overflow-y-auto px-4 pb-4">
-                    <ul class="space-y-2">
-                        <li v-for="(faq, idx) in faqs" :key="idx">
-                            <button @click="selected = idx" :class="[
-                                'w-full text-left px-6 py-4 rounded flex justify-between items-center transition-colors duration-200',
-                                selected === idx
-                                    ? 'bg-black text-white'
-                                    : 'bg-white text-green-800 hover:bg-green-50'
-                            ]">
-                                <span class="font-medium">{{ faq.question }}</span>
-                                <svg v-if="selected === idx" class="w-5 h-5 text-yellow-400 flex-shrink-0"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
-                                <div v-else class="w-5 h-5"></div>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="relative h-[900px]">
+        <div class="w-[100%] bg-black h-[780px] absolute top-[120px] z-10"></div>
+        <section class="relative  max-w-[1260px] mx-auto bg-white border-3 rounded-2xl overflow-hidden mb-4 z-20">
 
-            <!-- Right Column: Answer -->
-            <div class="w-2/3 flex flex-col h-[600px]">
-                <!-- Header -->
-                <div class="px-6 py-8 bg-yellow-400">
-                    <h3 class="text-3xl font-bold text-green-800">Ans.</h3>
+            <div class="flex">
+                <!-- Left Column: FAQs -->
+                <div class="w-[50%] flex flex-col h-[800px]">
+                    <!-- Header -->
+                    <div class="px-7 py-8 ">
+                        <div class=" section_header text-green-800">FAQs.</div>
+                    </div>
+                    <!-- Questions List -->
+                    <div class="flex-1 overflow-y-auto pb-4">
+                        <ul class="space-y-2 pr-3 ">
+                            <li v-for="(faq, idx) in faqs" :key="idx">
+                                <button @click="selected = idx" :class="[
+                                    'w-full text-left px-4 py-[22px] rounded flex justify-between items-center mb-3',
+                                    selected === idx
+                                        ? 'bg-black text-white'
+                                        : 'bg-gray-50  border-gray-200 rounded-2xl border-1 text-green-800   hover:bg-green-50'
+                                ]">
+                                    <span class="font-medium quest">{{ faq.question }}</span>
+                                    <div v-if="selected === idx" class="w-6 h-6 text-yellow-400 flex-shrink-0">
+                                        <img src="../assets/images/yellow_star.svg" alt="">
+                                    </div>
+                                    <div v-else class="w-5 h-5"></div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Answer Panel -->
-                <div class="flex-1 overflow-y-auto p-6 bg-yellow-400">
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-4">
-                            <svg class="w-6 h-6 text-yellow-900 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <p class="text-black text-base leading-relaxed">
-                                {{ faqs[selected].answer }}
-                            </p>
+
+                <!-- Right Column: Answer -->
+                <div class="w-[50%] flex flex-col h-[776px]">
+                    <!-- Header -->
+                    <div class="px-6 py-8">
+                        <div class="section_header text-green-800">Ans.</div>
+                    </div>
+                    <!-- Answer Panel -->
+                    <div class="px-6 h-[100%]">
+                        <div class="flex-1 overflow-y-auto p-10 bg-yellow-400 border rounded-2xl h-[100%]">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="w-6 h-6 text-yellow-900 mb-4">
+                                        <img src="../assets/images/black_star.svg" alt="">
+                                    </div>
+                                    <p class="text-black text-base leading-relaxed question_text">
+                                        {{ faqs[selected].answer }}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
+
 </template>
 
 <script setup>
@@ -79,7 +84,7 @@ const faqs = ref([
 const selected = ref(0)
 </script>
 
-<style>
+<style scoped>
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 8px;
@@ -98,5 +103,22 @@ const selected = ref(0)
 * {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.section_header {
+    font-size: 60px;
+    font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.question_text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+}
+
+.quest {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
 }
 </style>

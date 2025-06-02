@@ -1,4 +1,11 @@
 <template>
+  <!-- ...your visible code... -->
+  <!-- Hidden preloads -->
+  <div style="display:none;">
+    <img src="../assets/images/phone2.png" alt="">
+    <img src="../assets/images/phone3.png" alt="">
+    <img src="../assets/images/phone4.png" alt="">
+  </div>
   <div class="max-w-[352px] mx-auto my-5">
     <!-- Toggle Switch -->
     <div class="flex justify-center mb-8 ">
